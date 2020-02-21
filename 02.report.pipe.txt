@@ -1,0 +1,28 @@
+Pratical work 2: Pipe and I/O Redirection
+
+1) Command: ls > thislist
+   Comment: It will read all the files in the current directory to the thislist.
+   
+   Command: cat < thislist | grep list
+   Output: thislist
+   Comment: It will print all the files have the "list" in their name.
+
+2) Command: wc /etc/passwd
+   Output:  41   72 2431 /etc/passwd
+   Comment: The /etc/passwd has 41 lines.
+
+3) Command: free
+   Output:               total        used        free      shared  buff/cache   available
+	   Mem:        8141472     1595000     4381264       19280     2165208     6235316
+	   Swap:       1459804           0     1459804
+   Comment: The memory that my virtual machine has is 8141472 bytes.
+
+4) Command:  cat /proc/cpuinfo
+   Output: core id		: 0
+	   cpu cores		: 1
+	   apicid		: 0
+   Comment: My CPU has 1 core.
+
+5) Command: find ./Pictures -name *.jpg
+   Output: ./Pictures/dragon.jpg
+   Comment: I have 1 photo in my pictures directory
