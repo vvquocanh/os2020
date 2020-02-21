@@ -1,0 +1,44 @@
+Practical work 3: Process control from shell
+
+1) Command: ps -A
+   Output:  	 1858 ?        00:00:00 kworker/5:0-cgr
+ 		 1868 ?        00:00:00 gvfsd-trash
+ 		 1885 ?        00:00:00 evolution-calen
+  		 1890 tty2     00:00:00 ibus-engine-sim
+ 		 1904 ?        00:00:00 evolution-calen
+  		 1919 ?        00:00:00 evolution-addre
+ 		 1930 ?        00:00:00 evolution-addre
+  		 1945 ?        00:00:00 gnome-terminal-
+ 		 1953 pts/0    00:00:00 bash
+ 		 1962 pts/0    00:00:00 ps
+   Comment: This comment will print out all of the running processes
+
+2) Command: ps aux | grep gnome-calculator
+   Output: 	kaiser0+   2194  3.9  0.4 724252 39828 tty2     Sl+  00:06   0:01 /snap/gnome-calculator/544/usr/bin/gnome-calculator
+		kaiser0+   2463  0.0  0.0  21532  1004 pts/0    S+   00:07   0:00 grep --color=auto gnome-calculator
+   Comment: The process id is 2194
+
+3) Command: cat < /proc/2194/status
+   Output: 	Name:	gnome-calculato
+		Umask:	0002
+		State:	S (sleeping)
+		Tgid:	2194
+		Ngid:	0
+		Pid:	2194
+		PPid:	1632
+		TracerPid:	0
+		Uid:	1000	1000	1000	1000
+		Gid:	1000	1000	1000	1000
+   Comment: 
+
+4) Command: kill -STOP 2194
+   Output: The calculator is stopped
+   Comment: This command is to stop the calculator
+
+5) Command: kill -CONT 2194
+   Output: The calculator can be used again
+   Comment: This command is to resume the calculator
+
+6) Command: kill -KILL 2194
+   Output: The calculator is closed
+   Comment: This command is to close the calculator
