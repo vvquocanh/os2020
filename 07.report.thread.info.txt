@@ -1,0 +1,7 @@
+Practical Work 7: Get Thread Information
+Command and Output: 	kaiser0903@ubuntu:~$ ps -A | grep firefox
+ 		 	9415 tty2     00:00:04 firefox
+			kaiser0903@ubuntu:~$ ps -o nlwp 9415
+			NLWP
+ 			 57
+Comment: Number of threads for process firefox is 57

@@ -1,0 +1,32 @@
+Practical Work 5: Get Scheduler Information
+
+1) Command: cat /proc/sched_debug | grep systemd
+   Output: 
+ 	S        systemd     1       594.558930     46845   120         0.000000      3279.332737         0.000000 0 0 /autogroup-2
+ 	Ssystemd-resolve   670       174.293033      1702   120         0.000000       473.461336         0.000000 0 0 /autogroup-24
+ 	S        systemd  1067        43.692466       134   120         0.000000        75.302017         0.000000 0 0 /autogroup-72
+ 	Ssystemd-journal   476       165.684646      9809   119         0.000000      2102.552351         0.000000 0 0 /autogroup-5
+	S  systemd-udevd   493       385.683948      1049   120         0.000000       708.108273         0.000000 0 0 /autogroup-14
+ 	S        systemd  1422       138.877724       626   120         0.000000       670.936109         0.000000 0 0 /autogroup-88
+ 	S systemd-logind   770        65.638149      7485   120         0.000000       323.398372         0.000000 0 0 /autogroup-47
+ 	Ssystemd-timesyn   671       140.072083      1131   120         0.000000       301.195958         0.000000 0 0 /autogroup-25
+   Comment: Number of switches is 46845
+
+2) Command and output:
+	kaiser0903@ubuntu:~$ ps -A | grep systemd
+   		1 ?        00:00:03 systemd
+		476 ?        00:00:02 systemd-journal
+  		493 ?        00:00:00 systemd-udevd
+		670 ?        00:00:00 systemd-resolve
+		671 ?        00:00:00 systemd-timesyn
+  	 	770 ?        00:00:00 systemd-logind
+ 	 	1067 ?        00:00:00 systemd
+		1422 ?        00:00:00 systemd
+	kaiser0903@ubuntu:~$ grep switches /proc/1/sched
+	nr_switches                                  :                52692
+	nr_voluntary_switches                        :                50057
+	nr_involuntary_switches                      :                 2635
+
+   Comment: Number of swithces is 52692
+
+
